@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mål" style="margin-left: 1000px; width: 4px; height: 700px; position: absolute; background-color: black;"></div>
+    <canvas id="Box" height="700px" width="1200px" style="border: black solid 1px; background-color: white;"></canvas>
+    <script>
+        var bodyEl = document.querySelector("body")     //jeg hadde ikke med med i boka mi
+        canvasEl = document.getElementById("Box");
+        var ctx = canvasEl.getContext("2d")             //jeg hadde ikke med med i boka mi
+
+        var x = 30;          
+        var y = 30;          
+        var size = 20;  
+        
+        ctx.fillRect(x, y, size, size);                 //jeg hadde ikke med med i boka mi
+
+        bodyEl.addEventListener("keydown", gå)          //jeg hadde ikke med med i boka mi
+
+        function gå(e){                                 //jeg hadde ikke med med i boka mi
+        if(e.key == "ArrowUp"){
+            y = y - 10
+        }else if (e.key == "ArrowDown"){
+            y = y + 10
+        }else if (e.key == "ArrowRight"){
+            x = x + 10
+        }else if (e.key == "ArrowLeft"){
+            x = x - 10
+        }
+        
+        console.log(x)
+
+        if ( x >= 1000){
+        console.log("seier")
+        }
+
+        ctx.clearRect(0,0,1200,700)                     //jeg hadde ikke med med i boka mi
+        ctx.fillRect(x, y, size, size);                 //jeg hadde ikke med med i boka mi
+    }
+    </script>                   
+</body>                 
+</html>
+
+<!--Jeg husket ikke hvordan canvas funket i det heletatt, bare at jeg måtte bruke det-->
